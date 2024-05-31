@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+            font-weight: 400;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 45px;
+           
+        }
+        .container {
+            margin: 0 auto;
+            background-color: rgb(246, 249, 255);
+            height: 300px;
+            width: 400px;
+            color: rgb(34, 26, 26);
+            border: 2px solid rgb(192, 226, 241);
+            border-radius: 3px;
+        }
+        input, #msg {
+            background-color: rgb(200, 200, 255);
+            border: rgb(0, 0, 0);
+            border-radius: 3px;
+        }
+
+        #msg {
+            height: 100px;
+        }
+        #btn {
+            display: flex;
+            flex-direction: row;
+            margin: 10px 10px;
+           
+        }
+        button {
+            margin: 0 10px;
+            background-color: rgba(255, 98, 41, 0.953);
+            font-size: 14px;
+          
+            
+            border-radius: 2px;
+        
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form action="">
+            <label>Nome: </label>
+            <input type="text" placeholder="Digite seu nome">
+            <label>E-mail: </label>
+            <input type="email" placeholder="Digite seu email">
+            <label>Mensagem: </label>
+            <textarea name="msg" id="msg" placeholder="Digite sua mensagem"></textarea>
+            <div id="btn">
+                
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
