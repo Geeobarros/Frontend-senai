@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas com JS e HTML
+    </title>
+    <style>
+        .lista-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            height: 500px;
+            margin-left: 40%;
+            font-size: 18px;
+                      
+        }
+        h1 { 
+            color: rgb(19, 10, 89);
+            margin-left: 40%;
+        }
+
+        h3, .preco {
+            padding-left: 4rem;
+            
+        }        
+
+        .item {
+            background-color: #eeeaea;
+            margin-top: 10px;
+            padding: 10px;
+            width: 200px;
+            border: 2px dashed #2e16a7;
+            border-radius: 5px;
+        }
+
+        .item:hover {
+            background-color: rgb(178, 166, 244);
+            transition: 1.5s ;
+            transform: scale(1.05);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Nesta exercício, você será deve criar uma página web que exiba uma lista de produtos usando HTML e JavaScript para dinamicamente renderizar os produtos na página e CSS para estilização.
+
+        Considera dados de testes definindo uma variável com os valores; segue o exemplo:
+
+        const produtos = [
+            { nome: "Camiseta", valor: 29.99 },
+            { nome: "Calça Jeans", valor: 49.99 },
+            { nome: "Tênis", valor: 79.99 },
+            { nome: "Boné", valor: 14.99 }
+        ] -->
+    
+    <h1>Lista de Produtos</h1>
+
+    <div class="lista-produtos" >
+
+    </div>
+
+
+    <script>
+        const lista_produtos = document.querySelector('.lista-produtos');  
+
+        const produtos = [
+            { nome: "Camiseta", valor: 29.99 },
+            { nome: "Calça Jeans", valor: 49.99 },
+            { nome: "Tênis", valor: 79.99 },
+            { nome: "Boné", valor: 14.99 }
+        ];
+        
+        
+        produtos.forEach(produto => {
+            const div_produto = document.createElement('div'); //cria uma div
+            div_produto.classList.add('item'); //add uma classe na div criada acima
+            lista_produtos.appendChild(div_produto);  //adiciona div_produto na section lista_produto
+    
+            const nome_produto = document.createElement('h3'); //cria um elemento h3
+            nome_produto.textContent = produto.nome; //adiciona o nome do produto que consta na lista do elemento h3
+    
+            const preco_produto = document.createElement('span'); //cria um elemento span
+            preco_produto.classList.add('preco'); // add uma classe ao span
+            preco_produto.textContent = `R$ ${produto.valor.toFixed(2)}`;
+            
+            div_produto.appendChild(nome_produto);
+            div_produto.appendChild(preco_produto);
+
+        });
+
+       
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
