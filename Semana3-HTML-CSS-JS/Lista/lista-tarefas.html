@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <style>
+        header {
+            background-color: palevioletred;
+            width: 100%;
+            height: 50px;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(249, 249, 0);
+        }
+
+        .add-task {
+
+            width: 193px;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: center;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            height: 40px
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            font-weight: 600;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+
+        }
+
+        .feito {
+            text-decoration: line-through;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Crie uma lista de tarefas (to-do list), onde o usuário pode adicionar tarefas. Use JavaScript para adicionar novos itens à lista e para tornar a tarefa como feita ao clicar no item.
+
+        Requisitos:
+
+        Capturar eventos de clique.
+
+        Modificar o DOM para adicionar elementos e modificar o elemento.
+
+        Uso de métodos DOM como document.getElementById, document.querySelector, element.innerHTML, element.style, etc. -->
+
+    <header>
+        <h1>Lista de tarefas</h1>
+    </header>
+
+    <main>
+        <div class="add-task">
+            <input class="textoBox" type="text" placeholder="Digite uma tarefa">
+            <button class="adicionar">+</button>
+        </div>
+
+        <section>
+            <ul class="list">
+
+            </ul>
+        </section>
+
+    </main>
+
+
+
+    <script>
+        const list = document.querySelector('.list');
+        const btn = document.querySelector('button');
+        const input = document.querySelector('.textoBox');
+
+        
+        function marcarTask(e) {
+            
+            e.target.style.textDecoration = 'line-through'
+
+        }
+        
+        btn.addEventListener('click', () => {
+            const tarefa = input.value.trim() // pegar valor do input e remove espaços em branco ''
+
+            if (tarefa) {
+                const item = document.createElement('li') //cria elemento li
+                input.value = '' //papaga depois de digitar no input
+
+                item.innerText = tarefa //captura o que foi escrito no input e mostra no li
+
+                list.appendChild(item) /
+
+                    item.addEventListener('click', marcarTask)
+
+
+            } else {
+                alert('informe uma tarefa')
+            }
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
