@@ -11,13 +11,14 @@
 
     <div class="container">
        
+        <!--Ex3: Adicionar atributo de eventos no menu da aplicação, informar 'página em construção' ao clicar em cada item -->
         <div class="menu">
                 <ul type="none">
                     <li>
-                        <a aria-label="ir para sobre" href="#">Sobre</a>
+                        <a aria-label="ir para sobre" onclick="page()">Sobre</a>
                     </li>
                     <li>
-                        <a aria-label="ir para trailer" href="#">Trailer</a>
+                        <a aria-label="ir para trailer" onclick="page()">Trailer</a>
                     </li>
                     <li>
                         <a href="https://netflix.com">
@@ -25,10 +26,10 @@
                         </a>
                     </li>
                     <li>
-                        <a aria-label="ir para atores" href="#">Atores</a>
+                        <a aria-label="ir para atores" onclick="page()">Atores</a>
                     </li>
                     <li>
-                        <a aria-label="ir para avaliações" href="#">Avaliações</a>
+                        <a aria-label="ir para avaliações" onclick="page()">Avaliações</a>
                     </li>
                 </ul>
         </div>
@@ -79,6 +80,12 @@
 
     <script>
         const episodios = document.getElementById()
+
+
+        function page(){
+            window.open('./page.html')
+        }
+        
         
     </script>
 </body>
