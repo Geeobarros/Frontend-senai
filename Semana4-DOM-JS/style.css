@@ -85,6 +85,25 @@ ul li{
     margin-top: 15px;
 }
 
+.episodios {
+    display: flex;
+    flex-direction: row ;
+    gap: 10px;
+    
+}
+
+.card-episodio, .img-card{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    gap: 5px;
+    flex-wrap: wrap;
+    width: 240px;
+    height: 140px;
+    background-color: gray;
+    cursor: pointer;
+}
+
 .poster {
     width: 23%;
 }
