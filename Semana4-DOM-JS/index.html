@@ -110,9 +110,11 @@
             }
     ]
 
+    //Ex:06 Utilizar um método de repetição no JS para ser renderizado os cards no HTML (usar innerHTML)
     episodios.forEach(episodio =>{
         const card_episodio = document.createElement('div')
         card_episodio.className = 'card-episodio'
+
         card_episodio.innerHTML = `
             <span>${episodio.episodio}</span>
             <span>${episodio.tempo}</span>
