@@ -75,37 +75,43 @@ ul li{
     margin-top: 26px;
 }
 
-.row {
+.info-serie-row {
     margin-top: 36px;
     display: flex;
     flex-direction: row;
 }
 
-.episodios {
-    margin-top: 15px;
-}
 
 .episodios {
+    margin-top: 15px;
     display: flex;
     flex-direction: row ;
     gap: 10px;
     
 }
 
-.card-episodio, .img-card{
+.card-episodio {
     display: flex;
     flex-direction: row;
-    align-content: space-around;
-    gap: 5px;
     flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-top: 10px;
     width: 240px;
     height: 140px;
-    background-color: gray;
     cursor: pointer;
+    
+}
+
+.card-episodio img{
+    width: 240px;
+    height: 140px;
 }
 
 .poster {
     width: 23%;
+    
 }
 
 .info { 
@@ -116,4 +122,16 @@ ul li{
 }
 .info-text {
     text-align: end;
+}
+
+button {
+    cursor: pointer;
+    opacity: 0.5;
+    color: red;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    justify-content: center;
 }
