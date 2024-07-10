@@ -1,3 +1,4 @@
+import RedesSociais from "../redesSociais";
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -21,7 +22,7 @@ function Footer() {
                 </ul>
                 
                 
-
+                <RedesSociais/>
 
             </div>
             
