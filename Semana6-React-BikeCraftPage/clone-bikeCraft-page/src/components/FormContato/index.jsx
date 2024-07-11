@@ -13,7 +13,8 @@ function FormContato() {
         const form = {
             nome: nome,
             telefone: telefone,
-            email: email
+            email: email, 
+            mensagem: mensagem
         }
         console.log('dados', form)
     }
@@ -25,15 +26,16 @@ function FormContato() {
             <section className={styles.lojaOnline}>
 
                 <h2>Loja Online</h2>
-                <div className="endereco">
+                <div className={styles.endereco}>
 
-                    <ul>
+                    <ul >
                         <li>
                             <p>Rua Ali Perto, 35</p>
                             <p>Rio de Janeiro - RJ</p>
                             <p>Brasil - Terra - Via Láctea</p>
                         </li>
-
+                    </ul>
+                    <ul>
                         <li>
                             <p>contato@bikecraft.com</p>
                             <p>assistencia@bikcraft.com</p>
@@ -70,7 +72,7 @@ function FormContato() {
                     <textarea placeholder="O que você precisa?" value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
                     </div>
 
-                    <button   onClick={() => handleSubmit()}>ENVIAR MENSAGEM</button>
+                    <button onClick={() => handleSubmit()}>ENVIAR MENSAGEM</button>
                 </form>
             </section>
         </div>
