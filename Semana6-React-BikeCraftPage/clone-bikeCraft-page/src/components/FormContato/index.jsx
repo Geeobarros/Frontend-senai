@@ -4,20 +4,22 @@ import RedesSociais from '../redesSociais'
 
 function FormContato() {
 
-    const [nome, setNome] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [email, setEmail] = useState('')
-    const [mensagem, setMensagem] = useState('')
-
-    function handleSubmit(){
+    const [nome, setNome] = useState("");
+    const [telefone, setTelefone] = useState("")
+    const [email, setEmail] = useState("");
+    const [mensagem, setMensagem] = useState("");
+    
+    function handleSubmit(e) {
+        e.preventDefault()
         const form = {
-            nome: nome,
-            telefone: telefone,
-            email: email, 
-            mensagem: mensagem
-        }
-        console.log('dados', form)
+        nome,
+        telefone,
+        email,
+        mensagem,
+        };
+        console.log("Dados do Form:", form);
     }
+  
 
     return(
         <>
@@ -28,14 +30,14 @@ function FormContato() {
                 <h2>Loja Online</h2>
                 <div className={styles.endereco}>
 
-                    <ul >
+                    <ul className={styles.mBottom}>
                         <li>
                             <p>Rua Ali Perto, 35</p>
                             <p>Rio de Janeiro - RJ</p>
                             <p>Brasil - Terra - Via Láctea</p>
                         </li>
                     </ul>
-                    <ul>
+                    <ul className={styles.mBottom}>
                         <li>
                             <p>contato@bikecraft.com</p>
                             <p>assistencia@bikcraft.com</p>
@@ -50,7 +52,7 @@ function FormContato() {
 
             <section className={styles.contatoSection}>
 
-                <form  className={styles.contatoForm}>
+                <form onSubmit={handleSubmit} className={styles.contatoForm}>
                     
                     <div>
                     <label>Nome</label>
@@ -72,7 +74,7 @@ function FormContato() {
                     <textarea placeholder="O que você precisa?" value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
                     </div>
 
-                    <button onClick={() => handleSubmit()}>ENVIAR MENSAGEM</button>
+                    <button type="submit">ENVIAR MENSAGEM</button>
                 </form>
             </section>
         </div>

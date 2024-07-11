@@ -89,3 +89,7 @@
     display: flex;
     flex-direction: column;
 }
+
+.contatoForm .mBottom {
+    margin-bottom: 20px;
+}
