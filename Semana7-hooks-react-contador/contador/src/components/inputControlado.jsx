@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function InputControlado(){
-    const [inputEl, setInputEl] = useState('')
+    const [inputEl, setInputEl] = useState('')//useState('Eu irei mudar')
+    const inputFocus = useRef('null')
 
    const handleChange = (e) => {
         setInputEl(e.target.value)
     }
+
+   useEffect(() =>{
+        inputFocus.current.focus()
+    },[])
 
 
     return(
@@ -17,6 +22,7 @@ export default function InputControlado(){
             <input className="  mb-5" type="text" 
             placeholder="Digite aqui"
             value={inputEl}
+            ref={inputFocus}
             onChange={handleChange} />
 
             <p>O texto digitado é: <strong>{inputEl}</strong></p>

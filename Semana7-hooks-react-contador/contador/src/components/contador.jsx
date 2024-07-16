@@ -14,8 +14,9 @@ export function Contador() {
     }
 
     return(
-
-        <div className='mt-5  d-flex justify-content-center align-items-center gap-3'>
+        <>
+            <h3 className=" mt-4 d-flex justify-content-center align-items-center">Contador</h3>
+        <div className='mt-  d-flex justify-content-center align-items-center gap-3'>
 
             <button className="btn btn-danger" onClick={()=> decrementa()}>-</button>
 
@@ -23,7 +24,9 @@ export function Contador() {
 
             <button className="btn btn-primary" onClick={()=> incrementa()}>+</button>
 
+
         </div>
+        </>
 
     )
 

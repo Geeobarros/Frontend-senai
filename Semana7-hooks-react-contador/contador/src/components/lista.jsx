@@ -18,6 +18,7 @@ export function Lista(){
 
     return(
         <div className="container mt-4">
+            <h3>Lista:</h3>
             <form onSubmit={handleSubmit} className="mb-4">
                 <input type="text" className="form-control" onChange={e => settexto(e.target.value)} />
                 <button className="btn btn-primary mt-4">Cadastrar</button>
