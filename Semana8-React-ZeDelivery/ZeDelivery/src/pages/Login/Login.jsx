@@ -26,12 +26,9 @@ export default function Login(){
                 <input type="text" placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)}/>
                  <input type='text' placeholder='Senha' value={senha} onChange={(e) => setSenha(e.target.value)} />
 
-                <Button  color='' variant='contained'  type='submit'>Entrar</Button>
+                <Button size='large' color='' variant='contained'  type='submit'>Entrar</Button>
 
             </form>
-
-
-
         </div>
         </>
     )
