@@ -1,10 +1,21 @@
 #root {
-  max-width: 1280px;
-  padding: 0;
-  margin: 0;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  min-height: 100vh; 
+  margin: 0; 
   box-sizing: border-box;
-  /* text-align: center; */
+  
 }
+
+/* a {
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: yellow;
+} */
 
 /* .logo {
   height: 6em;

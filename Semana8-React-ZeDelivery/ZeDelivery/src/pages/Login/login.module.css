@@ -26,8 +26,34 @@ input{
     height: 50px;
     width: 320px;
     border-radius: 5px;
+    margin-left: 20%;
 }
 
+.btn{
+    
+    border: none rgb(255, 204, 0);
+    outline: none;
+    border-radius: 24px;
+    font-size: 14px;
+    padding: 12px;
+    font-family: Roboto;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 0px;
+    width: 150px;
+    height: 48px;
+    color: rgb(34, 34, 34);
+    background-color: rgb(255, 204, 0);
+    font-weight: 700;
+    margin-left: 50%;
+
+}
+
+.btn:hover{
+    transition: ease-in 2ms;
+    background-color: rgb(220, 185, 11);
+    
+}
 
 
 

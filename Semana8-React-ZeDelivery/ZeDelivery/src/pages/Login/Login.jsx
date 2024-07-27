@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import styles from './login.module.css'
-import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function Login(){
     const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState("")
+    const [senha, setSenha] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,6 +16,13 @@ export default function Login(){
             senha
         }
         console.log(form)
+
+        if(email === 'admin@admin.com' && senha === 'admin123'){
+            navigate('/home')
+        }else {
+            alert('E-mail e/ou senha incorretos')
+        }
+
     }
 
     return(
@@ -26,7 +34,7 @@ export default function Login(){
                 <input type="text" placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)}/>
                  <input type='text' placeholder='Senha' value={senha} onChange={(e) => setSenha(e.target.value)} />
 
-                <Button size='large' color='' variant='contained'  type='submit'>Entrar</Button>
+                <button className={styles.btn} type='submit'>Entrar</button>
 
             </form>
         </div>

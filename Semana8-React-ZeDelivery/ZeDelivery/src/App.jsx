@@ -1,15 +1,18 @@
-import { useState } from 'react'
 import './App.css'
-import Login from './pages/Login/Login'
-import Hero from './components/Hero/Hero'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router} from 'react-router-dom'
+import RoutesComponent from './routes/Routes'
 
 function App() {
   
 
   return (
     <>
-      {/* <Login/> */}
-      <Hero/>
+      <Router>
+        <RoutesComponent />
+      </Router>
+
+      
     </>
   )
 }
