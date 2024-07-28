@@ -99,6 +99,7 @@
         function marcarTask(e) {
             
             e.target.classList.toggle('feito')
+        
 
         }
         
@@ -111,9 +112,8 @@
 
                 item.innerText = tarefa //captura o que foi escrito no input e mostra no li
 
-                list.appendChild(item) /
-
-                    item.addEventListener('click', marcarTask)
+                list.appendChild(item)
+                item.addEventListener('click', marcarTask)
 
 
             } else {
