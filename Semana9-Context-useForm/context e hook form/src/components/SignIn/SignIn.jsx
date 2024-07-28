@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/authContext';
 
 export default function Login() {
     const { signIn } = useAuth();
@@ -13,10 +13,11 @@ export default function Login() {
 
         try {
             await signIn({ username, password });
+            console.log('login', 'nome:',username, 'senha:',password)
         }catch(error) {
             console.log('falha no login');
         }
-    };
+    }
 
     return(
         <form onSubmit={handleSubmit}>
