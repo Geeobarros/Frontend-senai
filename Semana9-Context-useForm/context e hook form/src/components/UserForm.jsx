@@ -11,18 +11,29 @@ export default function UserForm() {
     return(
         
         <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Cadastro de Usuários</h1>
+            <h1>Cadastre-se</h1>
             <div>
                 <label htmlFor="name">Nome: </label>
                 <input type="text"
                 id="name"
-                {...register('name', { required: true })} />
+                {...register('name', { required: true})} />
                 {errors.name && <span>Nome é obrigatório</span>}
+                
+            </div>
+
+            <div>
+                <label htmlFor="age">Idade:</label>
+                <input type="number"
+                id="age"
+                {...register('age', {required: true,
+                validate: value => value >= 18 || 'Você deve ter pelo menos 18 anos'
+                })} />
+                {errors.age && <span>{errors.age.message}</span>}
             </div>
 
             <div>
                 <label htmlFor="email">E-mail: </label>
-                <input type="text"
+                <input type="email"
                 id="email"
                 {...register('email', {required: true })} />
                 {errors.email && <span>Email é obrigatório</span>}
@@ -30,7 +41,7 @@ export default function UserForm() {
 
             <div>
                 <label htmlFor="password">Senha: </label>
-                <input type="text"
+                <input type="password"
                 id="password"
                 {...register('password',  {required: true})} />
                 {errors.password && <span>Senha é obrigatório</span>}
