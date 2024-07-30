@@ -1,18 +1,18 @@
 import './App.css'
-import UserForm from './components/UserForm'
 import { AuthProvider } from './contexts/authContext'
-import SignIn from './components/SignIn/SignIn'
+
+import RoutesComponent from './routes/Routes'
 
 function App() {
   
 
   return (
     <>
-    <AuthProvider>
-
-      {/* <SignIn/> */}
-      <UserForm/>
-    </AuthProvider>
+    
+      <AuthProvider>
+        <RoutesComponent/>
+      </AuthProvider>
+   
       
     </>
   )

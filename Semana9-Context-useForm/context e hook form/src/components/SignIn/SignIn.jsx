@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/authContext';
+import {  useNavigate } from 'react-router-dom';
+import Header from '../Header';
+import styles from './signin.module.css'
 
 export default function Login() {
     const { signIn } = useAuth();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate()
     const [error, setError] = useState(null);
 
     async function handleSubmit(e){
@@ -13,32 +17,39 @@ export default function Login() {
 
         try {
             await signIn({ username, password });
-            console.log('login', 'nome:',username, 'senha:',password)
+            navigate('/dashboard');
+            console.log('login', 'nome:',username, 'senha:', password)
         }catch(error) {
             console.log('falha no login');
+            setError(<span>Username/password incorrect</span>)
+
         }
     }
 
     return(
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="username">Username</label>
+            <Header/>
+            <div className={styles.containerFormLogin}>
+
+                <h1 className={styles.titleFormLogin}>Login </h1>
+                
                 <input type="text" 
+                placeholder='Username'
                 value={username}
-                id='username' 
+                required 
                 onChange={(e) => setUsername(e.target.value)}
                 />
             
-                <label htmlFor="password">Password</label>
-                <input type="text" 
+                
+                <input placeholder='Password' type="password" 
                 value={password}
-                id='password' 
+                required 
                 onChange={(e) => setPassword(e.target.value)}
                 />
-            </div>
-            {error && <p style={{color:'red'}}>{error}</p>}
+            {error && <p style={{color:'red'}}>Username/password incorrect</p>}
 
             <button type='submit'>Login</button>
+            </div>
         </form>
 
     )
