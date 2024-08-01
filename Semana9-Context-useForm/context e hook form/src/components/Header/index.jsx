@@ -10,11 +10,18 @@ export default function Header(){
             <Link to='/'><h1>My Site</h1></Link>
             <div className={styles.content}>
                 <Link to="/">Home</Link>
-                <Link to='/cadastro'>Register</Link>
                 {auth ? (
+                    <>
+                    <Link to="/dashboard">Dashboard</Link>
                     <Link onClick={signOut} >Logout</Link>
+                    </>
                 ) : (
+                    <>
+                    <Link to='/cadastro'>Register</Link>
                     <Link to='/login'>Login</Link>
+                    </>
+
+
                 )}
             </div>
         </div>
