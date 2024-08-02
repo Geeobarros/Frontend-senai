@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/authContext';
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import Header from '../Header';
 import styles from './signin.module.css'
 
@@ -47,6 +47,8 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 />
             {error && <p style={{color:'red'}}>Username/password incorrect</p>}
+
+            <span>Não tem uma conta? <Link style={{textDecoration: 'underline'}} to='/cadastro' >Cadastre-se</Link> </span>
 
             <button type='submit'>Login</button>
             </div>
